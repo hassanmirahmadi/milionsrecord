@@ -38,17 +38,17 @@ namespace milyon
             viewModel.LoadData(mobileDbContext.Mobiles.ToList());
         }
 
-       
-
-        private void loadingdata_Click(object sender, RoutedEventArgs e)
-        {
-            viewModel.LoadData(mobileDbContext.Mobiles.ToList());
-        }
 
         private void TextBox_KeyUp1(object sender, KeyEventArgs e)
         {
-
+            viewModel.LoadData(mobileDbContext.Mobiles.Where(delegate (Mobile m)
+            {
+                string name=m.Name.ToLower();
+                string brandname=m.BrandName.ToLower();
+                string SearchStr=txtbx.Text.Trim().ToLower();
+                return name.Contains(SearchStr) || brandname.Contains(SearchStr);
+            }).ToList());
         }
-
+        //b => b.BrandName.ToLower().Contains(txtbx.Text.Trim().ToLower()) ||b.Name.ToLower().Contains(txtbx.Text.Trim().ToLower())).ToList()
     }
 }

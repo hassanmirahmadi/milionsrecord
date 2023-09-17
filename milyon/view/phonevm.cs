@@ -11,15 +11,13 @@ namespace milyon.view
 {
     public class Phonevm
     {
+
         public ObservableCollection<Mobile> details { get; } = new ObservableCollection<Mobile>();
 
         public void LoadData(List<Mobile> detailss)
         {
             details.Clear();
             if (detailss != null)
-
-
-
                 foreach (var item in detailss)
                     details.Add(item);
 
