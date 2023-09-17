@@ -22,6 +22,7 @@ public partial class MobileDbContext : DbContext
         optionsBuilder.UseSqlServer("Server=DESKTOP-MB2H1NT;Database=Mobile Db;Trusted_Connection=True;TrustServerCertificate=True;");
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Code Smell", "S3251:Implementations should be provided for \"partial\" methods", Justification = "<Pending>")]
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Mobile>(entity =>
@@ -39,5 +40,6 @@ public partial class MobileDbContext : DbContext
         OnModelCreatingPartial(modelBuilder);
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Code Smell", "S3251:Implementations should be provided for \"partial\" methods", Justification = "<Pending>")]
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

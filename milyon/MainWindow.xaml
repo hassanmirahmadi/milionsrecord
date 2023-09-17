@@ -5,8 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:milyon"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="loading page" Height="450" Width="800">
+    <Grid Loaded="Mobiles_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="427*"/>
+            <ColumnDefinition Width="373*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="txtbx"
+            KeyUp="TextBox_KeyUp1"
+            Margin="333,33,333,44" BorderBrush="Black" Grid.ColumnSpan="4" FontSize="18" />
+
+
+        <DataGrid  ItemsSource="{Binding details}" Margin="18,70,18,28" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF7DA3BB"/>
+                    <GradientStop Color="#FF94D6B4" Offset="1"/>
+                    <GradientStop Color="#FF8DAAD7" Offset="0.358"/>
+                    <GradientStop Color="#FFAEE0CC" Offset="0.729"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+        </DataGrid>
+
+        <Label Margin="374,5,0,67" Content="search" HorizontalAlignment="Left" FontFamily="Forte" FontSize="20" Grid.ColumnSpan="2" >
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF878787" Offset="0.243"/>
+                    <GradientStop Color="#FFAAAAAA" Offset="0.684"/>
+                    <GradientStop Color="#FF414141" Offset="0.188"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF031754" Offset="0.167"/>
+                <GradientStop Color="#FF2A5411" Offset="0.733"/>
+                <GradientStop Color="#FF153433" Offset="0.569"/>
+                <GradientStop Color="#FF071E4B" Offset="0.365"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+
 
     </Grid>
 </Window>
